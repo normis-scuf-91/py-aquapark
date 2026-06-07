@@ -11,7 +11,7 @@ class IntegerRange:
     def __set_name__(self, owner: type, name: str) -> None:
         self.protected_name = "_" + name
 
-    def __set__(self, instance: object, value: int| float) -> None:
+    def __set__(self, instance: object, value: int | float) -> None:
         if isinstance(value, (int, float)) and not isinstance(value, bool):
             if self.min_amount <= value <= self.max_amount:
                 setattr(instance, self.protected_name, value)
